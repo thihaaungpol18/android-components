@@ -144,7 +144,7 @@ class TopSiteStorageTest {
             execSQL(
                 "INSERT INTO " +
                     "top_sites " +
-                    "(title, url, isDefault, created_at) " +
+                    "(title, url, is_default, created_at) " +
                     "VALUES " +
                     "('Firefox','firefox.com',1,5)," +
                     "('Monitor','https://monitor.firefox.com/',0,5)"
@@ -156,27 +156,27 @@ class TopSiteStorageTest {
 
             // Check isDefault for Mozilla
             cursor.moveToFirst()
-            assertEquals(0, cursor.getInt(cursor.getColumnIndexOrThrow("isDefault")))
+            assertEquals(0, cursor.getInt(cursor.getColumnIndexOrThrow("is_default")))
 
             // Check isDefault for Top Articles
             cursor.moveToNext()
-            assertEquals(1, cursor.getInt(cursor.getColumnIndexOrThrow("isDefault")))
+            assertEquals(1, cursor.getInt(cursor.getColumnIndexOrThrow("is_default")))
 
             // Check isDefault for Wikipedia
             cursor.moveToNext()
-            assertEquals(1, cursor.getInt(cursor.getColumnIndexOrThrow("isDefault")))
+            assertEquals(1, cursor.getInt(cursor.getColumnIndexOrThrow("is_default")))
 
             // Check isDefault for YouTube
             cursor.moveToNext()
-            assertEquals(1, cursor.getInt(cursor.getColumnIndexOrThrow("isDefault")))
+            assertEquals(1, cursor.getInt(cursor.getColumnIndexOrThrow("is_default")))
 
             // Check isDefault for Firefox
             cursor.moveToNext()
-            assertEquals(1, cursor.getInt(cursor.getColumnIndexOrThrow("isDefault")))
+            assertEquals(1, cursor.getInt(cursor.getColumnIndexOrThrow("is_default")))
 
             // Check isDefault for Monitor
             cursor.moveToNext()
-            assertEquals(0, cursor.getInt(cursor.getColumnIndexOrThrow("isDefault")))
+            assertEquals(0, cursor.getInt(cursor.getColumnIndexOrThrow("is_default")))
         }
     }
 
